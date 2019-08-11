@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            background:url(../Images/LoginBackground.jpg);
+            background-size: cover;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            margin-top: 120px;
+            font-size: 3em;
+            font-weight: 300;
+        }
+        button {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: white;
+        }
+        .theSameDiv {
+            width: 350px;
+            height: 60px;
+            border: 1px white solid;
+            border-radius: 5px;
+            margin: 20px auto;
+            font-size: 1.5em;
+            line-height: 60px;
+        }
+        .login {
+            width: 100%;
+            height: 100%;
+            font-size: 1.1em;
+            border-radius: 5px;
+        }
+        .login:hover {
+            color: rgb(14, 167, 141);
+            background-color: white;
+        }
+        .sameInput {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background: none;
+            border: none;
+            outline: none;
+            text-align: center;
+            font-size: 1.1em;
+            color: white;
+        }
+        .signUp {
+            font-size: 1em;
+        }
+        #adminButton {
+            font-size: 1.1em;
+            border-radius: 5px;
+            display: block;
+            position: relative;
+        }
+        #adminDiv {
+            position: absolute;
+            top: 0%;
+            right: 0%;
+        }
+    </style>
+</head>
+<body>
+    <div id="adminDiv"><button id="adminButton">Admin</button></div>
+    <h1>Welcome</h1>
+    <div id="container" class="container">
+        <div class="theSameDiv">
+            <input type="text" class="sameInput username" value="Username" onfocus="changeUsernameValue()"></input>
+        </div>
+        <div class="theSameDiv">
+            <input id="password" type="text" class="sameInput password" onkeyup="changeString()" value="Password" onfocus="changePasswordValue()"></input>
+        </div>
+        <div class="theSameDiv">
+            <button class="login">Sign in</button>
+        </div>     
+        <div><button class="signUp" onclick="signUp()">Sign up</button></div>  
+    </div>
+    
+    <script>
+        var x = 0;
+        var y = 0;      
+        function changeUsernameValue(){           
+            if(x == 0)
+                document.getElementsByClassName("sameInput")[0].value = "";  
+            x++;
+        }
+        function changePasswordValue(){           
+            if(y == 0)
+                document.getElementsByClassName("sameInput")[1].value = "";  
+            y++;
+        }
+        function changeString(){
+            document.getElementById("password").value = document.getElementById("password").value.replace(/./g,"♥");
+        }
+        function signUp(){
+            document.getElementById("container").style.display = "none";
+        }
+    </script>
+</body>
+</html>
